@@ -43,7 +43,7 @@ public class Main extends Application {
         Button divBtn = new Button(" log ");
         Button clrBtn = new Button(" C ");
         Button equalBtn = new Button(" = ");
-        Button dotBtn = new Button(" . ");
+       // Button dotBtn = new Button(" . ");
 
         //number button(s)
         Button zeroBtn = new Button(" 0 ");
@@ -119,11 +119,11 @@ public class Main extends Application {
                 label.setText(label.getText() + "9");
             }
         });
-        dotBtn.setOnAction(new EventHandler<ActionEvent>() {
+      /*  dotBtn.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 label.setText(label.getText() + ".");
             }
-        });
+        });*/
         clrBtn.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 //num = 0;
@@ -224,7 +224,7 @@ public class Main extends Application {
 
         //row 5
         gridPane.add(zeroBtn, 0, 5, 1, 1);
-        gridPane.add(dotBtn, 1, 5, 1, 1);
+       // gridPane.add(dotBtn, 1, 5, 1, 1);
         gridPane.add(equalBtn, 2, 5, 1, 1);
         gridPane.add(addBtn, 3, 5, 1, 1);
 
