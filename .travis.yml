@@ -2,11 +2,12 @@ language: java
 jdk:
 - openjdk14
 - oraclejdk14
+- openjdk8
 
 addons:
  sonarcloud:
   organization: johnscodes
-  token: 979b12389b2e79bfff3b7c5c14c6f9a13e296a65
+  token: ca207b585e85746f5625eb306ba414e1baff3b53
 
 script: 
  - ant build
