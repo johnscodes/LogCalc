@@ -1,5 +1,6 @@
 package sample;
 
+import java.lang.*;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,6 +11,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+
+import static jdk.nashorn.internal.runtime.regexp.joni.Syntax.Java;
 
 public class Main extends Application {
 
@@ -140,6 +143,7 @@ public class Main extends Application {
         subBtn.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 operator = "-";
+                num = Double.parseDouble(label.getText());
                 //calculate();
                 label.setText(operator);
                 //num = "";
@@ -148,6 +152,7 @@ public class Main extends Application {
         divBtn.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 operator = "log";
+                num = Double.parseDouble(label.getText());
                 label.setText(operator);
                 // num = "";
             }
@@ -155,13 +160,16 @@ public class Main extends Application {
         multiBtn.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 operator = "*";
+                num = Double.parseDouble(label.getText());
+                //calculate();
                 label.setText(operator);
+                //num = "";
             }
         });
         equalBtn.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 num2 = Double.parseDouble(label.getText());
-                calculate(operator, num);
+                calculate(operator, num, num2);
             }
         });
 /*
@@ -233,23 +241,22 @@ public class Main extends Application {
         primaryStage.show();
     };
 
-    private void calculate(String operator, double num){
+    private void calculate(String operator, double num, double num2){
         double result = 0.0;
         if (operator == "+"){
             result = num2 + num;
             label.setText(result + "");
         }
         if (operator == "-"){
-            result = num2 - num;
+            result = num2 + num;
             label.setText(result + "");
         }
         if (operator == "*"){
             result = num2 * num;
             label.setText(result + "");
-            // num = " ";
         }
         if (operator == "log"){
-            result = Math.log(num2);
+            result = Math.log(num);
             label.setText(result + "");
             //num = " ";
         }
