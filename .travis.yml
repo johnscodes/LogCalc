@@ -1,7 +1,6 @@
 language: java
 jdk:
 - openjdk8
-- oraclejdk8
 
 addons:
  sonarcloud:
@@ -9,5 +8,5 @@ addons:
   token: ca207b585e85746f5625eb306ba414e1baff3b53
 
 script: 
--ant build
--sonar scanner
+ - ant build
+ - sonar-scanner
