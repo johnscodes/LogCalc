@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import java.lang.Math;
 
 public class Main extends Application {
 
@@ -28,7 +29,7 @@ public class Main extends Application {
         TextField inputNum1 = new TextField();
 
         // Value 2
-        Text textLabel2 = new Text("Value 2: ");
+        Text textLabel2 = new Text("Value 2: \n do not include anything in this field for log");
         TextField inputNum2 = new TextField();
 
         // function selector
@@ -130,15 +131,13 @@ public class Main extends Application {
 	    logBtn.setOnAction(new EventHandler<ActionEvent>() {
 	        public void handle(ActionEvent event) {
 	        	num1 = Double.parseDouble(inputNum1.getText());
-	            num2 = Double.parseDouble(inputNum2.getText()); 
+	            //num2 = Double.parseDouble(inputNum2.getText()); 
 	        	result = Math.log(num1);
 	            answer.setText(result + "");
 	        }
 	    });
     }
     
-	   
- 
     public static void main(String[] args) {
         launch(args);
     }
