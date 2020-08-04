@@ -3,8 +3,6 @@ jdk:
 - openjdk8
 - oraclejdk8
 
-install: ant deps
-
 addons:
  sonarcloud:
   organization: johnscodes
