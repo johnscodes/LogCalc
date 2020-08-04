@@ -81,7 +81,7 @@ public class Main extends Application {
 
         bp.setCenter(gridPane);
 
-        primaryStage.setScene(new Scene(bp, 400, 200));
+        primaryStage.setScene(new Scene(bp, 700, 200));
 
         primaryStage.show();
         
